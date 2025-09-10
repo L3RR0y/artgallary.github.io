@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtPulse - Галерея художников</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Christmas+On+Crack&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Параллакс фон -->
+<div class="parallax-bg"></div>
+
+<div class="parallax-container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#gallery" class="nav-gallery">Галерея Художников</a></li>
+                <li><a href="#contact" class="nav-contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <!-- Анимированный герой баннер -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="logo-text alternative animate-fade-in">ArtPulse</h1>
+        <p class="animate-fade-in-delay">Великие мастера и их бессмертные творения</p>
+    </div>
+    
+    <!-- Вынесите кнопку из hero-content -->
+    <div class="scroll-hint-container">
+        <div class="hero-scroll-hint animate-fade-in-delay-2" onclick="scrollToGallery()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="scroll-hint-tooltip">Нажмите для прокрутки к галерее</div>
+    </div>
+</section>
+
+    <!-- Миссия -->
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2 class="animate-on-scroll">Наша миссия</h2>
+            <p class="animate-on-scroll">Сохраняем наследие великих мастеров прошлого и открываем новые таланты современности. 
+            ArtPulse — это мост между эпохами, где классическое искусство встречается с цифровыми технологиями.</p>
+        </div>
+    </section>
+
+<!-- Статистика -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item animate-on-scroll">
+            <div class="stat-number" data-target="17" id="artists-count">0</div>
+            <div class="stat-label">Выдающихся художников</div>
+        </div>
+        <div class="stat-item animate-on-scroll">
+            <div class="stat-number" data-target="136">0</div>
+            <div class="stat-label">Шедевров искусства</div>
+        </div>
+        <div class="stat-item animate-on-scroll">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Видов искусств</div>
+        </div>
+    </div>
+</section>
+
+    <!-- Призыв к действию -->
+    <section class="cta-section">
+        <div class="cta-content animate-on-scroll">
+            <h2>Начните путешествие в мир искусства</h2>
+            <p>Откройте для себя сокровища русской живописи и найдите вдохновение</p>
+            <button class="cta-button" onclick="scrollToGallery()">
+                Исследовать галерею
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+<!-- Галерея художников -->
+<div class="filters">
+    <button class="filter-btn active" data-filter="all">Все</button>
+    <button class="filter-btn" data-filter="живописец">Живописцы</button>
+    <button class="filter-btn" data-filter="пейзажист">Пейзажисты</button>
+    <button class="filter-btn" data-filter="импрессионизм">Импрессионисты</button>
+    <button class="filter-btn" data-filter="символизм">Символисты</button>
+    <button class="filter-btn" data-filter="реалист">Реалисты</button>
+    <button class="filter-btn" data-filter="супрематизм">Супрематисты</button>
+    <button class="filter-btn" data-filter="историческая">Историческая живопись</button>
+    <button class="filter-btn" data-filter="религиозная">Религиозная живопись</button>
+    <button class="filter-btn" data-filter="монументалист">Монументалисты</button>
+    <button class="filter-btn" data-filter="постимпрессионизм">Постимпрессионисты</button>
+</div>
+
+<section id="gallery">
+    <h2>Галерея художников</h2>
+    <div class="artists-grid">
+        <!-- 1. Иван Хруцкий -->
+        <div class="artist-card" data-artist-id="ivan-khruckiy">
+            <div class="artist-portrait">
+                <img src="artist-1.jpg" alt="Иван Хруцкий">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Иван Хруцкий</h3>
+            <p>Живописец</p>
+            <p>1810-1885</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 2. Илья Репин -->
+        <div class="artist-card" data-artist-id="ilya-repin">
+            <div class="artist-portrait">
+                <img src="artist-2.jpg" alt="Илья Репин">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Илья Репин</h3>
+            <p>Реалист</p>
+            <p>1844-1930</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 3. Казимир Малевич -->
+        <div class="artist-card" data-artist-id="kazimir-malevich">
+            <div class="artist-portrait">
+                <img src="artist-3.jpg" alt="Казимир Малевич">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Казимир Малевич</h3>
+            <p>Супрематизм</p>
+            <p>1879-1935</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 4. Виктор Васнецов -->
+        <div class="artist-card" data-artist-id="viktor-vasnetsov">
+            <div class="artist-portrait">
+                <img src="artist-4.jpg" alt="Виктор Васнецов">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Виктор Васнецов</h3>
+            <p>Историческая живопись</p>
+            <p>1848-1926</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 5. Алексей Саврасов -->
+        <div class="artist-card" data-artist-id="aleksey-savrasov">
+            <div class="artist-portrait">
+                <img src="artist-5.jpg" alt="Алексей Саврасов">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Алексей Саврасов</h3>
+            <p>Пейзажист</p>
+            <p>1830-1897</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 6. Михаил Врубель -->
+        <div class="artist-card" data-artist-id="mikhail-vrubel">
+            <div class="artist-portrait">
+                <img src="artist-6.jpg" alt="Михаил Врубель">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Михаил Врубель</h3>
+            <p>Символизм</p>
+            <p>1856-1910</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 7. Василий Суриков -->
+        <div class="artist-card" data-artist-id="vasily-surikov">
+            <div class="artist-portrait">
+                <img src="artist-7.jpg" alt="Василий Суриков">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Василий Суриков</h3>
+            <p>Историческая живопись</p>
+            <p>1848-1916</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 8. Александр Иванов -->
+        <div class="artist-card" data-artist-id="alexander-ivanov">
+            <div class="artist-portrait">
+                <img src="artist-8.jpg" alt="Александр Иванов">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Александр Иванов</h3>
+            <p>Религиозная живопись</p>
+            <p>1806-1858</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 9. Федор Васильев -->
+        <div class="artist-card" data-artist-id="fedor-vasilyev">
+            <div class="artist-portrait">
+                <img src="artist-9.jpg" alt="Федор Васильев">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Федор Васильев</h3>
+            <p>Пейзажист</p>
+            <p>1850-1873</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 10. Николай Рерих -->
+        <div class="artist-card" data-artist-id="nikolay-rerikh">
+            <div class="artist-portrait">
+                <img src="artist-10.jpg" alt="Николай Рерих">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Николай Рерих</h3>
+            <p>Символизм</p>
+            <p>1874-1947</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 11. Игорь Грабарь -->
+        <div class="artist-card" data-artist-id="igor-grabar">
+            <div class="artist-portrait">
+                <img src="artist-11.jpg" alt="Игорь Грабарь">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Игорь Грабарь</h3>
+            <p>Импрессионизм</p>
+            <p>1871-1960</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 12. Павел Корин -->
+        <div class="artist-card" data-artist-id="pavel-korin">
+            <div class="artist-portrait">
+                <img src="artist-12.jpg" alt="Павел Корин">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Павел Корин</h3>
+            <p>Монументалист</p>
+            <p>1892-1967</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 13. Константин Коровин -->
+        <div class="artist-card" data-artist-id="konstantin-korovin">
+            <div class="artist-portrait">
+                <img src="artist-13.jpg" alt="Константин Коровин">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Константин Коровин</h3>
+            <p>Импрессионизм</p>
+            <p>1861-1939</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 14. Михаил Нестеров -->
+        <div class="artist-card" data-artist-id="mikhail-nesterov">
+            <div class="artist-portrait">
+                <img src="artist-14.jpg" alt="Михаил Нестеров">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Михаил Нестеров</h3>
+            <p>Религиозная живопись</p>
+            <p>1862-1942</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 15. Борис Кустодиев -->
+        <div class="artist-card" data-artist-id="boris-kustodiev">
+            <div class="artist-portrait">
+                <img src="artist-15.jpg" alt="Борис Кустодиев">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Борис Кустодиев</h3>
+            <p>Живописец</p>
+            <p>1878-1927</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 16. Роберт Фальк -->
+        <div class="artist-card" data-artist-id="robert-falk">
+            <div class="artist-portrait">
+                <img src="artist-16.jpg" alt="Роберт Фальк">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Роберт Фальк</h3>
+            <p>Постимпрессионизм</p>
+            <p>1886-1958</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+
+        <!-- 17. Исаак Левитан -->
+        <div class="artist-card" data-artist-id="isaac-levitan">
+            <div class="artist-portrait">
+                <img src="artist-17.jpg" alt="Исаак Левитан">
+                <div class="artist-overlay">
+                    <span>Посмотреть портфолио</span>
+                </div>
+            </div>
+            <h3>Исаак Левитан</h3>
+            <p>Пейзажист</p>
+            <p>1860-1900</p>
+            <span class="click-hint">Нажмите чтобы просмотреть</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <!-- Контактная информация перенесена в футер -->
+        <div id="contact" class="contact-info">
+            <h3>Свяжитесь со мной</h3>
+            <p>
+                <i class="fas fa-envelope"></i> 
+                Email: <a href="mailto:deliandk2280w@yandex.ru" class="contact-link">deliandk2280w@yandex.ru</a>
+            </p>
+            <p>
+                <i class="fab fa-telegram"></i> 
+                Telegram бот: <a href="https://t.me/L3RR0y_Gall_Bot" target="_blank" class="contact-link">@L3RR0y_Gall_Bot</a>
+            </p>
+            <p>
+                <i class="fab fa-vk"></i> 
+                VK: <a href="https://vk.com/iddelian" target="_blank" class="contact-link">vk.com/iddelian</a>
+            </p>
+            <p>
+                <i class="fas fa-phone"></i> 
+                Телефон: <a href="tel:+79518480448" class="contact-link">+7 (951) 848-04-48</a>
+            </p>
+        </div>
+        
+        <p>&copy; 2025 ArtPulse. Все права защищены.</p>
+    </div>
+</footer>
+</div>
+
+<!-- Модальное окно для изображений -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-navigation">
+        <button class="nav-arrow prev" onclick="navigateArtwork(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="modal-image-container">
+            <img class="modal-content" id="modalImage">
+        </div>
+        <button class="nav-arrow next" onclick="navigateArtwork(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- Контейнер для уведомлений -->
+<div id="notificationContainer"></div>
+
+<!-- Canvas для частиц -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- Контейнер для портфолио художника -->
+<div id="portfolioContainer" class="portfolio-container" style="display: none;">
+    <button id="closePortfolio" class="close-portfolio-btn">
+        <i class="fas fa-arrow-left"></i> Назад к галерее
+    </button>
+    <div id="portfolioContent"></div>
+</div>
+</body>
+</html>
